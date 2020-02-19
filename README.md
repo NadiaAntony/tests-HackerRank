@@ -1,2 +1,3 @@
-# tests-HackerRank
+# tests-hrank
+
 Clean solutions for practice
