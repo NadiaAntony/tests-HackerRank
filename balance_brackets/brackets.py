@@ -1,6 +1,6 @@
 import re
 
-class Brackets:
+class Brackets(str):
 
     def balance_brackets(self, input_string):
       """
