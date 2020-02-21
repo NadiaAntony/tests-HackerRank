@@ -1,4 +1,6 @@
-import balance_brackets as bb
+import brackets as b
+
+bb = b.Brackets()
 
 def utest_balance():
     """
