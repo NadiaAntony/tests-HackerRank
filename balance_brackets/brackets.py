@@ -1,7 +1,8 @@
 import re
 
 class Brackets(str):
-
+    def __init__(self):
+        print("Brackets class is in module: ", __name__)
     def balance_brackets(self, input_string):
       """
       input: string
@@ -16,3 +17,8 @@ class Brackets(str):
       scount = len([i for i in new_string if i=='(']) # count remaining brackets
       ecount = len([i for i in new_string if i==')'])
       return(ecount+scount)
+
+if __name__ == "__main__":
+    ## Block executed only if module is run (not if it is imported)
+    b=Brackets()
+    print("number to balance: ", b.balance_brackets("()()("))
