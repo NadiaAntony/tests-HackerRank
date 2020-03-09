@@ -3,9 +3,9 @@ import time
 
 # decorator function to check elapsed time
 def elapsed_time(f):
-    def wrapper():
+    def wrapper(*args, **kwargs):
         t1=time.time()
-        f()
+        f(*args, **kwargs)
         t2=time.time()
         print("time elapsed: ", ((t2-t1)*1000), "ms")
     return wrapper
@@ -29,8 +29,8 @@ def check_session1(logs, maxspan):
         except IndexError:
             print("no second value for ID", k)
 
-        # print sorted IDs where session > maxspan - use sets
-        print({k for k,v in sessions.items() if v and v>maxspan})
+    # print sorted IDs where session > maxspan - use sets
+    print({k for k,v in sessions.items() if v and v>maxspan})
 
 @elapsed_time
 def check_session2(logs, maxspan):
@@ -50,8 +50,8 @@ def check_session2(logs, maxspan):
         except IndexError:
             print("no second value for ID", k)
 
-        # print sorted IDs where session > maxspan - use sets
-        print({k for k,v in sessions.items() if v and v>maxspan})
+    # print sorted IDs where session > maxspan - use sets
+    print({k for k,v in sessions.items() if v and v>maxspan})
 
 def main():
     logs=["30 99 sign-in", "20 105 sign-out", "21 100 sign-in", "20 80 sign-in", "30 120 sign-out"]
